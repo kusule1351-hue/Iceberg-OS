@@ -1,0 +1,11 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [{ "Name": "Iceberg OS" }],
+        "Description": "The Iceberg OS desktop, dark",
+        "Id": "org.icebergos.dark.desktop",
+        "License": "GPLv2+",
+        "Name": "Iceberg Dark"
+    },
+    "X-Plasma-APIVersion": "2"
+}

@@ -54,6 +54,8 @@ To update, run `sudo bootc upgrade` and reboot, or use Discover. To go back to t
 - **Packages:** add to the `PACKAGES` list in `build_files/build.sh`.
 - **Fedora version:** change `FEDORA_VERSION` in `Containerfile`.
 - **Wallpapers:** add the image to `wallpaper/` and add an `install_wallpaper` line in `build.sh`.
+- **Desktop look:** Iceberg Light and Iceberg Dark are global themes in `system_files/usr/share/plasma/look-and-feel/`. Their colours are in `system_files/usr/share/color-schemes/`. The dock is defined in `build_files/plasma/`: `dock-layout.js` sets which items it holds, and `dock-style.json` sets how the tiles look. Plasma switches between light and dark at sunrise and sunset.
+- **Seeing a new look on an existing install:** after updating, go to System Settings → Colors & Themes → Global Theme, pick Iceberg Light or Iceberg Dark, tick "Desktop and window layout", then Apply. New user accounts get the look automatically.
 - **Pure Fedora base:** set `BASE_IMAGE=quay.io/fedora/fedora-kinoite` in `Containerfile`. You lose the extra codecs.
 
 Every push to `main` builds a new image. Pull requests run the build without publishing it, so you can test changes safely.

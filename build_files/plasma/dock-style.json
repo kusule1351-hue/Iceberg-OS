@@ -1,0 +1,83 @@
+{
+    "panel": {
+        "normal": {
+            "enabled": true,
+            "blurBehind": true,
+            "backgroundColor": {
+                "enabled": true,
+                "sourceType": 1,
+                "systemColorSet": "Window",
+                "systemColor": "backgroundColor",
+                "alpha": 0.85
+            },
+            "radius": {
+                "enabled": true,
+                "corner": { "topLeft": 24, "topRight": 24, "bottomRight": 24, "bottomLeft": 24 }
+            },
+            "padding": {
+                "enabled": true,
+                "side": { "left": 6, "right": 6, "top": 0, "bottom": 0 }
+            },
+            "border": {
+                "enabled": true,
+                "width": 1,
+                "color": {
+                    "enabled": true,
+                    "sourceType": 1,
+                    "systemColorSet": "Window",
+                    "systemColor": "textColor",
+                    "alpha": 0.08
+                }
+            },
+            "shadow": {
+                "background": {
+                    "enabled": true,
+                    "size": 18,
+                    "xOffset": 0,
+                    "yOffset": 4,
+                    "color": {
+                        "enabled": true,
+                        "sourceType": 0,
+                        "custom": "#000000",
+                        "alpha": 0.25
+                    }
+                }
+            }
+        }
+    },
+    "widgets": {
+        "normal": {
+            "enabled": true,
+            "backgroundColor": {
+                "enabled": true,
+                "sourceType": 1,
+                "systemColorSet": "Button",
+                "systemColor": "backgroundColor",
+                "alpha": 1
+            },
+            "radius": {
+                "enabled": true,
+                "corner": { "topLeft": 16, "topRight": 16, "bottomRight": 16, "bottomLeft": 16 }
+            },
+            "margin": {
+                "enabled": true,
+                "side": { "left": 0, "right": 0, "top": 6, "bottom": 6 }
+            },
+            "spacing": 8,
+            "border": {
+                "enabled": true,
+                "width": 1,
+                "color": {
+                    "enabled": true,
+                    "sourceType": 1,
+                    "systemColorSet": "Button",
+                    "systemColor": "textColor",
+                    "alpha": 0.06
+                }
+            }
+        }
+    },
+    "nativePanel": {
+        "background": { "enabled": true, "opacity": 0, "shadow": false }
+    }
+}

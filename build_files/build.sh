@@ -17,8 +17,18 @@ ln -sf /usr/share/icons/hicolor/scalable/apps/iceberg-logo.svg /usr/share/pixmap
 PACKAGES=(
     fastfetch
     btop
+    firefox
+    rsms-inter-fonts
 )
 dnf5 install -y "${PACKAGES[@]}"
+
+# Panel Colorizer draws the Iceberg dock's rounded tiles. It's packaged by its
+# author on the openSUSE Build Service; the repo is removed again afterwards so
+# the package only updates when the image is rebuilt.
+curl -fsSLo /etc/yum.repos.d/panel-colorizer.repo \
+    "https://download.opensuse.org/repositories/home:/luisbocanegra/Fedora_${FEDORA_VERSION}/home:luisbocanegra.repo"
+dnf5 install -y plasma-panel-colorizer
+rm -f /etc/yum.repos.d/panel-colorizer.repo
 
 # COPR example. Disable it afterwards so it isn't left enabled on user systems.
 # dnf5 -y copr enable owner/project
@@ -60,6 +70,61 @@ install_wallpaper IcebergEmber "Iceberg Ember" redpurple.png
 for defaults in /usr/share/plasma/look-and-feel/*/contents/defaults; do
     kwriteconfig6 --file "${defaults}" --group Wallpaper --key Image Iceberg
 done
+
+### Iceberg desktop
+# Two global themes, Iceberg Light and Iceberg Dark (system_files/usr/share/plasma/look-and-feel),
+# share one dock layout. Plasma switches between them automatically at sunrise and sunset.
+python3 - <<'EOF'
+import json, os
+
+# Pinned dock apps, in order. The first browser that exists wins.
+browser = next((b for b in ("firefox", "org.mozilla.firefox")
+                if os.path.exists(f"/usr/share/applications/{b}.desktop")), None)
+apps = [browser, "org.kde.dolphin", "org.kde.konsole", "org.kde.discover", "systemsettings"]
+launchers = [f"applications:{a}.desktop" for a in apps
+             if a and os.path.exists(f"/usr/share/applications/{a}.desktop")]
+print("Dock launchers:", launchers)
+
+with open("/ctx/plasma/dock-style.json") as f:
+    style = json.load(f)
+with open("/ctx/plasma/dock-layout.js") as f:
+    layout = f.read().replace("@LAUNCHERS@", json.dumps(launchers)).replace("@DOCK_STYLE@", json.dumps(style))
+
+for theme in ("light", "dark"):
+    path = f"/usr/share/plasma/look-and-feel/org.icebergos.{theme}.desktop/contents/layouts/org.kde.plasma.desktop-layout.js"
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as f:
+        f.write(layout)
+
+# Also offer the tile style as a Panel Colorizer preset, so it can be re-applied by hand.
+preset = "/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer/contents/ui/presets/Iceberg"
+os.makedirs(preset, exist_ok=True)
+with open(f"{preset}/settings.json", "w") as f:
+    json.dump({"globalSettings": style}, f, indent=4)
+EOF
+
+install -Dm644 /ctx/wallpaper/light.png /usr/share/plasma/look-and-feel/org.icebergos.light.desktop/contents/previews/preview.png
+install -Dm644 /ctx/wallpaper/dark.png /usr/share/plasma/look-and-feel/org.icebergos.dark.desktop/contents/previews/preview.png
+
+# Make Iceberg the default global theme, including anywhere Fedora sets its own.
+grep -rn -e '^LookAndFeelPackage=' -e '^ColorScheme=' /etc/xdg /usr/share/kde-settings 2>/dev/null || true
+for config in $(grep -rl '^LookAndFeelPackage=' /etc/xdg /usr/share/kde-settings 2>/dev/null); do
+    sed -i 's/^LookAndFeelPackage=.*/LookAndFeelPackage=org.icebergos.light.desktop/' "${config}"
+done
+kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key LookAndFeelPackage org.icebergos.light.desktop
+kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key DefaultLightLookAndFeel org.icebergos.light.desktop
+kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key DefaultDarkLookAndFeel org.icebergos.dark.desktop
+kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key AutomaticLookAndFeel --type bool true
+kwriteconfig6 --file /etc/xdg/kdeglobals --group General --key ColorScheme IcebergLight
+
+# Inter as the interface font, with semibold window titles
+fc-list : family | grep -i inter || true
+INTER="Inter,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+kwriteconfig6 --file /etc/xdg/kdeglobals --group General --key font "${INTER}"
+kwriteconfig6 --file /etc/xdg/kdeglobals --group General --key menuFont "${INTER}"
+kwriteconfig6 --file /etc/xdg/kdeglobals --group General --key toolBarFont "${INTER}"
+kwriteconfig6 --file /etc/xdg/kdeglobals --group General --key smallestReadableFont "Inter,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+kwriteconfig6 --file /etc/xdg/kdeglobals --group WM --key activeFont "Inter,10,-1,5,600,0,0,0,0,0,0,0,0,0,0,1"
 
 ### Branding
 sed -i \
