@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <clipPath id="disc"><circle cx="64" cy="64" r="60"/></clipPath>
+    <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b3a5c"/>
+      <stop offset="1" stop-color="#0b1726"/>
+    </linearGradient>
+    <linearGradient id="under" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fc3ea" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#3f86b8" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#disc)">
+    <rect width="128" height="128" fill="#dfe8ef"/>
+    <rect y="62" width="128" height="66" fill="url(#deep)"/>
+    <!-- visible tip -->
+    <path d="M38 62 L57 30 L65 41 L73 34 L92 62 Z" fill="#ffffff"/>
+    <path d="M57 30 L65 41 L60 62 L38 62 Z" fill="#c9dbe8"/>
+    <!-- the part below the surface -->
+    <path d="M34 66 L94 66 L108 86 L82 112 L44 108 L22 86 Z" fill="url(#under)"/>
+    <rect y="61" width="128" height="3" fill="#9fd4f2"/>
+  </g>
+</svg>
