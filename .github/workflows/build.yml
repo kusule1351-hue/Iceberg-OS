@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - main
+      - design  # test builds, published as :design
     paths-ignore:
       - '**/README.md'
   workflow_dispatch:
@@ -33,7 +34,9 @@ jobs:
     env:
       # Signing is skipped until the SIGNING_SECRET repository secret exists (see README)
       HAS_SIGNING_SECRET: ${{ secrets.SIGNING_SECRET != '' }}
-      PUBLISH: ${{ github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+      # main publishes :latest; other branches publish a test image tagged with the branch name
+      PUBLISH: ${{ github.event_name != 'pull_request' }}
+      IS_DEFAULT_BRANCH: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
 
     steps:
       - name: Checkout
@@ -60,7 +63,11 @@ jobs:
       - name: Default Tag
         id: gen-default-tag
         run: |
-          DEFAULT_TAG=$(just generate-default-tag)
+          if [[ "${IS_DEFAULT_BRANCH}" == "true" ]]; then
+            DEFAULT_TAG=$(just generate-default-tag)
+          else
+            DEFAULT_TAG="${GITHUB_REF_NAME////-}"
+          fi
 
           echo "DEFAULT_TAG=${DEFAULT_TAG}" >> $GITHUB_ENV
 
