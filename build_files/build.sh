@@ -109,7 +109,10 @@ install -Dm644 /ctx/wallpaper/dark.png /usr/share/plasma/look-and-feel/org.icebe
 # Make Iceberg the default global theme, including anywhere Fedora sets its own.
 grep -rn -e '^LookAndFeelPackage=' -e '^ColorScheme=' /etc/xdg /usr/share/kde-settings 2>/dev/null || true
 for config in $(grep -rl '^LookAndFeelPackage=' /etc/xdg /usr/share/kde-settings 2>/dev/null); do
-    sed -i 's/^LookAndFeelPackage=.*/LookAndFeelPackage=org.icebergos.light.desktop/' "${config}"
+    sed -i \
+        -e 's/^LookAndFeelPackage=.*/LookAndFeelPackage=org.icebergos.light.desktop/' \
+        -e 's/^ColorScheme=.*/ColorScheme=IcebergLight/' \
+        "${config}"
 done
 kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key LookAndFeelPackage org.icebergos.light.desktop
 kwriteconfig6 --file /etc/xdg/kdeglobals --group KDE --key DefaultLightLookAndFeel org.icebergos.light.desktop
