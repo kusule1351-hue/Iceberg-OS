@@ -19,6 +19,7 @@ PACKAGES=(
     btop
     firefox
     rsms-inter-fonts
+    librsvg2-tools
 )
 dnf5 install -y "${PACKAGES[@]}"
 
@@ -30,13 +31,6 @@ curl -fsSLo /etc/yum.repos.d/panel-colorizer.repo \
 dnf5 install -y plasma-panel-colorizer
 rm -f /etc/yum.repos.d/panel-colorizer.repo
 
-# WhiteSur icons: every app icon sits on a rounded-square background.
-# -p swaps the Apple logo for the KDE one. Bump the version to update.
-WHITESUR_VERSION=2026-09-10
-curl -fsSL "https://github.com/vinceliuice/WhiteSur-icon-theme/archive/refs/tags/${WHITESUR_VERSION}.tar.gz" | tar xz -C /tmp
-bash "/tmp/WhiteSur-icon-theme-${WHITESUR_VERSION}/install.sh" -d /usr/share/icons -p
-test -f /usr/share/icons/WhiteSur/index.theme
-test -f /usr/share/icons/WhiteSur-dark/index.theme
 
 # COPR example. Disable it afterwards so it isn't left enabled on user systems.
 # dnf5 -y copr enable owner/project
@@ -110,6 +104,9 @@ os.makedirs(preset, exist_ok=True)
 with open(f"{preset}/settings.json", "w") as f:
     json.dump({"globalSettings": style}, f, indent=4)
 EOF
+
+# Iceberg and Iceberg-Dark icon themes: each app's own icon on an Iceberg plate
+python3 /ctx/icons/make-icon-theme.py
 
 install -Dm644 /ctx/wallpaper/light.png /usr/share/plasma/look-and-feel/org.icebergos.light.desktop/contents/previews/preview.png
 install -Dm644 /ctx/wallpaper/dark.png /usr/share/plasma/look-and-feel/org.icebergos.dark.desktop/contents/previews/preview.png

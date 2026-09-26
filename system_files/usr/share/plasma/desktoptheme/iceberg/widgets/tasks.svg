@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="240" viewBox="0 0 200 240">
+<style id="current-color-scheme" type="text/css">.ColorScheme-Text{color:#1d1d1f}.ColorScheme-NeutralText{color:#e68200}.ColorScheme-PositiveText{color:#24a64e}</style>
+<path id="normal-topleft" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 10A10 10 0 0 1 10 0V10Z"/>
+<path id="normal-top" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 0H20V10H10Z"/>
+<path id="normal-topright" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 0A10 10 0 0 1 30 10H20Z"/>
+<path id="normal-left" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 10H10V20H0Z"/>
+<path id="normal-center" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 10H20V20H10Z"/>
+<path id="normal-right" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 10H30V20H20Z"/>
+<path id="normal-bottomleft" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 20H10V30A10 10 0 0 1 0 20Z"/>
+<path id="normal-bottom" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 20H20V30H10Z"/>
+<path id="normal-bottomright" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 20H30A10 10 0 0 1 20 30Z"/>
+<path id="minimized-topleft" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 50A10 10 0 0 1 10 40V50Z"/>
+<path id="minimized-top" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 40H20V50H10Z"/>
+<path id="minimized-topright" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 40A10 10 0 0 1 30 50H20Z"/>
+<path id="minimized-left" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 50H10V60H0Z"/>
+<path id="minimized-center" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 50H20V60H10Z"/>
+<path id="minimized-right" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 50H30V60H20Z"/>
+<path id="minimized-bottomleft" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M0 60H10V70A10 10 0 0 1 0 60Z"/>
+<path id="minimized-bottom" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M10 60H20V70H10Z"/>
+<path id="minimized-bottomright" class="ColorScheme-Text" fill="currentColor" opacity="0" d="M20 60H30A10 10 0 0 1 20 70Z"/>
+<path id="hover-topleft" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M0 90A10 10 0 0 1 10 80V90Z"/>
+<path id="hover-top" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M10 80H20V90H10Z"/>
+<path id="hover-topright" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M20 80A10 10 0 0 1 30 90H20Z"/>
+<path id="hover-left" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M0 90H10V100H0Z"/>
+<path id="hover-center" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M10 90H20V100H10Z"/>
+<path id="hover-right" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M20 90H30V100H20Z"/>
+<path id="hover-bottomleft" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M0 100H10V110A10 10 0 0 1 0 100Z"/>
+<path id="hover-bottom" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M10 100H20V110H10Z"/>
+<path id="hover-bottomright" class="ColorScheme-Text" fill="currentColor" opacity="0.1" d="M20 100H30A10 10 0 0 1 20 110Z"/>
+<path id="focus-topleft" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M0 130A10 10 0 0 1 10 120V130Z"/>
+<path id="focus-top" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M10 120H20V130H10Z"/>
+<path id="focus-topright" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M20 120A10 10 0 0 1 30 130H20Z"/>
+<path id="focus-left" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M0 130H10V140H0Z"/>
+<path id="focus-center" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M10 130H20V140H10Z"/>
+<path id="focus-right" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M20 130H30V140H20Z"/>
+<path id="focus-bottomleft" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M0 140H10V150A10 10 0 0 1 0 140Z"/>
+<path id="focus-bottom" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M10 140H20V150H10Z"/>
+<path id="focus-bottomright" class="ColorScheme-Text" fill="currentColor" opacity="0.16" d="M20 140H30A10 10 0 0 1 20 150Z"/>
+<path id="attention-topleft" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M0 170A10 10 0 0 1 10 160V170Z"/>
+<path id="attention-top" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M10 160H20V170H10Z"/>
+<path id="attention-topright" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M20 160A10 10 0 0 1 30 170H20Z"/>
+<path id="attention-left" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M0 170H10V180H0Z"/>
+<path id="attention-center" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M10 170H20V180H10Z"/>
+<path id="attention-right" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M20 170H30V180H20Z"/>
+<path id="attention-bottomleft" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M0 180H10V190A10 10 0 0 1 0 180Z"/>
+<path id="attention-bottom" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M10 180H20V190H10Z"/>
+<path id="attention-bottomright" class="ColorScheme-NeutralText" fill="currentColor" opacity="0.3" d="M20 180H30A10 10 0 0 1 20 190Z"/>
+<path id="progress-topleft" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M0 210A10 10 0 0 1 10 200V210Z"/>
+<path id="progress-top" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M10 200H20V210H10Z"/>
+<path id="progress-topright" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M20 200A10 10 0 0 1 30 210H20Z"/>
+<path id="progress-left" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M0 210H10V220H0Z"/>
+<path id="progress-center" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M10 210H20V220H10Z"/>
+<path id="progress-right" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M20 210H30V220H20Z"/>
+<path id="progress-bottomleft" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M0 220H10V230A10 10 0 0 1 0 220Z"/>
+<path id="progress-bottom" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M10 220H20V230H10Z"/>
+<path id="progress-bottomright" class="ColorScheme-PositiveText" fill="currentColor" opacity="0.3" d="M20 220H30A10 10 0 0 1 20 230Z"/>
+</svg>

@@ -5,10 +5,10 @@ widgetStyle=Breeze
 ColorScheme=IcebergLight
 
 [kdeglobals][Icons]
-Theme=WhiteSur
+Theme=Iceberg
 
 [plasmarc][Theme]
-name=default
+name=iceberg
 
 [Wallpaper]
 Image=Iceberg

@@ -1,0 +1,11 @@
+{
+    "KPlugin": {
+        "Authors": [{ "Name": "Iceberg OS" }],
+        "Description": "Iceberg Plasma style: Breeze with soft, rounded task highlights",
+        "EnabledByDefault": true,
+        "Id": "iceberg",
+        "License": "LGPL",
+        "Name": "Iceberg"
+    },
+    "X-Plasma-API": "5.0"
+}
