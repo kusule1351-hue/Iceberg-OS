@@ -1,23 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <defs>
-    <clipPath id="disc"><circle cx="64" cy="64" r="60"/></clipPath>
-    <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1b3a5c"/>
-      <stop offset="1" stop-color="#0b1726"/>
-    </linearGradient>
-    <linearGradient id="under" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7fc3ea" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#3f86b8" stop-opacity="0.45"/>
-    </linearGradient>
-  </defs>
-  <g clip-path="url(#disc)">
-    <rect width="128" height="128" fill="#dfe8ef"/>
-    <rect y="62" width="128" height="66" fill="url(#deep)"/>
-    <!-- visible tip -->
-    <path d="M38 62 L57 30 L65 41 L73 34 L92 62 Z" fill="#ffffff"/>
-    <path d="M57 30 L65 41 L60 62 L38 62 Z" fill="#c9dbe8"/>
-    <!-- the part below the surface -->
-    <path d="M34 66 L94 66 L108 86 L82 112 L44 108 L22 86 Z" fill="url(#under)"/>
-    <rect y="61" width="128" height="3" fill="#9fd4f2"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Everything is drawn inside the circle, so no clip path is needed (Plasma ignores them) -->
+  <circle cx="32" cy="32" r="27" fill="#16304d"/>
+  <path d="M8.2 33h47.6a24 24 0 0 1-.1 2H8.3a24 24 0 0 1-.1-2z" fill="#9fd4f2"/>
+  <path d="M20 33 29 17l4.5 5.5L37.5 19 45 33z" fill="#ffffff"/>
+  <path d="M29 17 33.5 22.5 30 33H20z" fill="#d6e6f2"/>
+  <path d="M19 38h26l6 8.5-11 9.5H25l-10-9.5z" fill="#5aa9d6" opacity="0.75"/>
 </svg>

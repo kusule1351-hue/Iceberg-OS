@@ -9,6 +9,7 @@ function addPanelStyle(panel, widgetTiles) {
     if (!widgetTiles) {
         settings.widgets.normal.backgroundColor.enabled = false;
         settings.widgets.normal.border.enabled = false;
+        settings.widgets.normal.margin.enabled = false;
     }
     var style = panel.addWidget("luisbocanegra.panel.colorizer");
     style.currentConfigGroup = ["General"];
@@ -18,7 +19,7 @@ function addPanelStyle(panel, widgetTiles) {
 
 var dock = new Panel;
 dock.location = "bottom";
-dock.height = 2 * Math.ceil(gridUnit * 4.5 / 2);
+dock.height = 50; // 36px icons + indicator margins (see desktoptheme/iceberg/widgets/tasks.svg)
 dock.lengthMode = "fit";
 dock.alignment = "center";
 dock.floating = true;
@@ -53,10 +54,10 @@ clock.writeConfig("customDateFormat", "ddd d MMM");
 clock.writeConfig("dateDisplayFormat", 1); // beside the time
 clock.writeConfig("autoFontAndSize", false);
 clock.writeConfig("fontFamily", "Inter");
-clock.writeConfig("fontStyleName", "Medium");
+clock.writeConfig("fontWeight", 500); // Qt 6 scale; the default (50) renders thinner than Thin
 clock.writeConfig("fontSize", 10);
 
-addPanelStyle(status, true);
+addPanelStyle(status, false);
 
 var desktops = desktopsForActivity(currentActivity());
 for (var i = 0; i < desktops.length; i++) {

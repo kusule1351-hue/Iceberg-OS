@@ -28,33 +28,23 @@ GLYPH_PX = 192  # raster size of the app's own icon inside the plate
 THEMES = {
     "Iceberg": {
         "inherits": "breeze,hicolor",
-        "plate_top": "#FFFFFF",
-        "plate_bottom": "#EEEEF1",
+        "plate": "#FFFFFF",
         "edge": "#000000",
         "edge_opacity": "0.08",
-        "shadow_opacity": "0.10",
     },
     "Iceberg-Dark": {
         "inherits": "breeze-dark,hicolor",
-        "plate_top": "#3A3A3F",
-        "plate_bottom": "#28282C",
+        "plate": "#3A3A40",
         "edge": "#FFFFFF",
-        "edge_opacity": "0.10",
-        "shadow_opacity": "0.35",
+        "edge_opacity": "0.09",
     },
 }
 
+# A flat plate filling the whole icon, a hairline edge, and the app's glyph at 70%
 PLATE = """<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="iceberg-plate" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="{plate_top}"/>
-      <stop offset="1" stop-color="{plate_bottom}"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="5.5" width="56" height="56" rx="14" fill="#000000" opacity="{shadow_opacity}"/>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#iceberg-plate)"/>
-  <rect x="4.5" y="4.5" width="55" height="55" rx="13.5" fill="none" stroke="{edge}" stroke-opacity="{edge_opacity}"/>
-  <image x="12" y="12" width="40" height="40" xlink:href="data:image/png;base64,{glyph}"/>
+  <rect x="0" y="0" width="64" height="64" rx="18" fill="{plate}"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="17.5" fill="none" stroke="{edge}" stroke-opacity="{edge_opacity}"/>
+  <image x="9.5" y="9.5" width="45" height="45" xlink:href="data:image/png;base64,{glyph}"/>
 </svg>
 """
 
