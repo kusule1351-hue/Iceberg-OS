@@ -12,7 +12,7 @@
             },
             "radius": {
                 "enabled": true,
-                "corner": { "topLeft": 24, "topRight": 24, "bottomRight": 24, "bottomLeft": 24 }
+                "corner": { "topLeft": 20, "topRight": 20, "bottomRight": 20, "bottomLeft": 20 }
             },
             "padding": {
                 "enabled": true,
@@ -57,7 +57,7 @@
             },
             "radius": {
                 "enabled": true,
-                "corner": { "topLeft": 16, "topRight": 16, "bottomRight": 16, "bottomLeft": 16 }
+                "corner": { "topLeft": 14, "topRight": 14, "bottomRight": 14, "bottomLeft": 14 }
             },
             "margin": {
                 "enabled": true,

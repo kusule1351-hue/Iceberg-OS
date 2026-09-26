@@ -30,6 +30,14 @@ curl -fsSLo /etc/yum.repos.d/panel-colorizer.repo \
 dnf5 install -y plasma-panel-colorizer
 rm -f /etc/yum.repos.d/panel-colorizer.repo
 
+# WhiteSur icons: every app icon sits on a rounded-square background.
+# -p swaps the Apple logo for the KDE one. Bump the version to update.
+WHITESUR_VERSION=2026-09-10
+curl -fsSL "https://github.com/vinceliuice/WhiteSur-icon-theme/archive/refs/tags/${WHITESUR_VERSION}.tar.gz" | tar xz -C /tmp
+bash "/tmp/WhiteSur-icon-theme-${WHITESUR_VERSION}/install.sh" -d /usr/share/icons -p
+test -f /usr/share/icons/WhiteSur/index.theme
+test -f /usr/share/icons/WhiteSur-dark/index.theme
+
 # COPR example. Disable it afterwards so it isn't left enabled on user systems.
 # dnf5 -y copr enable owner/project
 # dnf5 -y install package

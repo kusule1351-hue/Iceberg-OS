@@ -6,6 +6,8 @@
 
 [customizations.installer.kickstart]
 contents = """
+network --hostname=iceberg
+
 %post
 bootc switch --mutate-in-place --transport registry __IMAGE_REF__
 %end
